@@ -13,13 +13,17 @@
     <p class="sampleClass">This paragraph has a class of 'sampleClass'</p>
 
     <button id="clickThisButton">Click Me</button>
+    <br>
+<!-- ################################################# -->
+    <label for="nameInput">Enter Your Name:</label>
+    <input type="text" id="nameInput" placeholder="John Smith" >
+    <p>Welcome!</p>
+    <p>No Name Has Been Entered</p>
 
 
 
 
-
-
-//_______________________________________ END _______________________________________
+<!-- _______________________________________ END _______________________________________ -->
     <script type="text/javascript">
 
         var x = 10;
@@ -42,6 +46,21 @@
             details.target.style.backgroundColor = 'red';
         });
 //#################################################
+        document.getElementById('nameInput').addEventListener('keyup', (event)=>{
+            console.log(event);
+        })
+//#################################################
+        document.getElementById('nameInput').addEventListener('keyup', (event)=>{
+            document.getElementsByTagName('p')[1].innerText=`Everyone please welcome ${event.target.value} to the stage.`;
+        })
+//#################################################
+        document.getElementById('nameInput').addEventListener('keyup',(event)=>{
+            if(event.target.value=== ''){
+                document.getElementsByTagName('p')[1].inserText ='No Name Has Been Entered';
+            }else{
+                document.getElementsByTagName('p')[1].innerText = `Everyone please welcome ${event.target.value} to the stage.`;
+            }
+        });
 
 
 
